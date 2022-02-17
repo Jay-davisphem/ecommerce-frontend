@@ -4,28 +4,49 @@ const Nav = () => {
       <li className="nav-item">
         <a
           className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-          href="#pablo"
+          href="/about"
         >
-          <i className="fab fa-facebook-square text-lg leading-lg text-white opacity-75"></i>
-          <span className="ml-2">Share</span>
+          <span className="ml-2">About</span>
         </a>
       </li>
       <li className="nav-item">
         <a
           className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-          href="#pablo"
+          href="/foods"
         >
-          <i className="fab fa-twitter text-lg leading-lg text-white opacity-75"></i>
-          <span className="ml-2">Tweet</span>
+          <span className="ml-2">Food Catalog</span>
         </a>
       </li>
       <li className="nav-item">
         <a
           className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-          href="#pablo"
+          href="/contact"
         >
-          <i className="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i>
-          <span className="ml-2">Pin</span>
+          <span className="ml-2">Contact</span>
+        </a>
+      </li>
+      <li className="nav-item">
+        <a
+          className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+          href="/login"
+        >
+          <span className="ml-2">Login</span>
+        </a>
+      </li>
+      <li className="nav-item">
+        <a
+          className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+          href="/login"
+        >
+          <span className="ml-2">Sign UP</span>
+        </a>
+      </li>
+      <li className="nav-item">
+        <a
+          className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+          href="/user"
+        >
+          <span className="ml-2">User</span>
         </a>
       </li>
     </ul>
