@@ -1,3 +1,12 @@
+import Head from "next/head";
 export default function Cart() {
-  return <h1 className="text-blue-400">Carts</h1>;
+  return (
+    <>
+      <Head>
+        <title>Carts</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <h1 className="text-blue-400">Carts</h1>
+    </>
+  );
 }

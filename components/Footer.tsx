@@ -8,34 +8,28 @@ const Footer = () => {
         <div className="flex textcenter justify-center">
           <a
             href="https://linkedin.com/in/davisphem"
-            className="mr-9 text-gray-800"
+            className="mr-9 text-blue"
           >
             <FaLinkedinIn />
           </a>
           <a
             href="mailto:davidoluwafemi178@gmail.com"
-            className="mr-9 text-gray-800"
+            className="mr-9 text-blue"
           >
             <SiGmail />
           </a>
-          <a
-            href="https://twitter.com/oluw4femi"
-            className="mr-9 text-gray-800"
-          >
+          <a href="https://twitter.com/oluw4femi" className="mr-9 text-blue">
             <FaTwitter />
           </a>
-          <a className="mr-9 text-gray-800" href="tel:+2348116585993">
+          <a className="mr-9 text-blue" href="tel:+2348116585993">
             <FiPhoneCall />
           </a>
         </div>
       </div>
 
-      <div className="text-center text-gray-700 p-4">
+      <div className="text-center text-blue p-4">
         © 2022 Copyright: Made with &#x1f339; by
-        <a
-          className="text-gray-800"
-          href="https://github.com/jay-davisphem.com/"
-        >
+        <a className="text-blue" href="https://github.com/jay-davisphem.com/">
           &nbsp; daviSPhem
         </a>
       </div>
