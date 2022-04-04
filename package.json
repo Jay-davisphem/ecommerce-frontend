@@ -1,6 +1,5 @@
 {
   "private": true,
-  "proxy": "localhost:8000",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
