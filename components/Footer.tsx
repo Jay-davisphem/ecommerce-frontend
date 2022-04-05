@@ -28,7 +28,8 @@ const Footer = () => {
       </div>
 
       <div className="text-center text-blue p-4">
-        © 2022 Copyright: Made with &#x1f339; by
+        © 2022 Copyright: Made with{" "}
+        <span className="text-[red]">&#x1f339;</span> by
         <a className="text-blue" href="https://github.com/jay-davisphem.com/">
           &nbsp; daviSPhem
         </a>
