@@ -20,7 +20,7 @@ export default function Foods({ items }) {
     </>
   );
 }
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const initialData = [
     {
       id: 1,
@@ -35,12 +35,12 @@ export async function getStaticProps() {
       meats: [1],
     },
   ];
-  let items;
+  let items = initialData;
   try {
     const res = await axios.get(`${process.env.API_URL}apis/foods/`);
     items = await res.data;
   } catch {
-    items = initialData;
+    throw new Error("Error");
   }
   return {
     props: {
