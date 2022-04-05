@@ -36,7 +36,7 @@ const Nav = () => {
       <li className="nav-item">
         <a
           className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-          href="/login"
+          href="/sign-up"
         >
           <span className="ml-2">Sign UP</span>
         </a>
