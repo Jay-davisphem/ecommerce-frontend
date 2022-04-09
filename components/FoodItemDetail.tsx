@@ -1,10 +1,9 @@
-import img from "../assets/assets_images/eba_efo.jpeg";
 import Image from "next/image";
 import { FcLikePlaceholder, FcLike } from "react-icons/fc";
 import { TiShoppingCart } from "react-icons/ti";
 import { useState } from "react";
 
-const FoodItemDetail = ({ title, price, category, type, description }) => {
+const FoodItemDetail = ({ title, price, category, description, image }) => {
   const [incart, setIncart] = useState(false);
   const clickHandler = () => setIncart(!incart);
   return (
@@ -23,13 +22,17 @@ const FoodItemDetail = ({ title, price, category, type, description }) => {
             />
           )}
         </div>
-        <Image src={img} width="300" objectFit="cover" alt="image" />
+        <Image
+          src={image}
+          width="300"
+          height="150"
+          objectFit="cover"
+          alt="image"
+        />
         <div className="py-none text-xs md:text-base text-left">
           <a className="text-blue inline-block cursor-pointer">{title}</a>
           <a className="text-sec inline-block cursor-pointer">${price}</a>
-          <p className="text-grey block">
-            {category} {type}
-          </p>
+          <p className="text-grey block">{category}</p>
           <p className="text-grey block">{description}</p>
         </div>
         <div>

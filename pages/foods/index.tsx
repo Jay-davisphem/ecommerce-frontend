@@ -1,8 +1,9 @@
 import axios from "axios";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-
+import img from "../../assets/assets_images/chicken2.jpeg";
 import FoodItem from "../../components/FoodItem";
+
 export default function Foods({ items }) {
   console.log(process.env.NEXT_PUBLIC_API_URL);
   return (
@@ -13,13 +14,14 @@ export default function Foods({ items }) {
       </Head>
       <h1 className="text-main lg:text-4xl md:text-3xl text-2xl">FOOD LISTS</h1>
       <div className="flex flex-row flex-wrap gap-4 md:gap-8 justify-center">
-        {items.map(({ regular_price, description, id, name }) => (
-          <FoodItem price={regular_price} title={name} key={id} />
+        {items.map(({ regular_price, description, id, name, image }) => (
+          <FoodItem price={regular_price} image={image} title={name} key={id} />
         ))}
       </div>
     </>
   );
 }
+
 export async function getServerSideProps() {
   const initialData = [
     {
@@ -33,14 +35,25 @@ export async function getServerSideProps() {
       vendor: 3,
       category: [1],
       meats: [1],
+      image: img,
     },
   ];
   let items = initialData;
   try {
-    const res = await axios.get(`${process.env.API_URL}apis/foods/`);
-    items = await res.data;
+    const food_res = await axios.get(`${process.env.API_URL}apis/foods/`);
+    items = await food_res.data;
+    const images_res = await axios.get(
+      `${process.env.API_URL}apis/food-images/`
+    );
+    const images = images_res.data;
+    for (let image of images) {
+      for (let food of items) {
+        if (image.food === food.id) food["image"] = image.food_images;
+      }
+    }
+    console.log(items);
   } catch {
-    throw new Error("Error");
+    throw new Error("FoodError");
   }
   return {
     props: {
