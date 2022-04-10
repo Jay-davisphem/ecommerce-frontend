@@ -1,6 +1,6 @@
 export type FoodItemProps = {
   id: number;
-  title: string;
+  name: string;
   image: string;
   regular_price: number;
   discount_price: number;

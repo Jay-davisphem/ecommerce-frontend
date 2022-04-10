@@ -5,7 +5,7 @@ import { useState } from "react";
 import { FoodItemProps } from "./Food";
 
 const FoodItem = ({
-  title,
+  name,
   regular_price,
   discount_price,
   image,
@@ -41,8 +41,8 @@ const FoodItem = ({
           />
         </Link>
         <div className="py-none text-xs md:text-base text-left text">
-          <span className="text-blue block">{title}</span>
-          <span className="text-[9px]">
+          <span className="text-blue block">{name}</span>
+          <span className="text-[9px] md:text-base">
             <span className="text-sec inline line-through decoration-[red]">
               ${regular_price}
             </span>
