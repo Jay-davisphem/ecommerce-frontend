@@ -15,3 +15,9 @@ export type FoodItemsDetailsProps = {
 export type FoodItemsProps = {
   items: FoodItemProps[];
 };
+
+export interface CategoryResponse {
+  id: number;
+  name: string;
+  vendor: number;
+}
