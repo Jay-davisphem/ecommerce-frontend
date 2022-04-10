@@ -15,7 +15,7 @@ export default function Home({ itemsDetail }: FoodItemsDetailsProps) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <FoodItemDetail
-        id={itemsDetail.id}
+        id={id}
         image={itemsDetail.image}
         description={itemsDetail.description}
         category={itemsDetail.category}
