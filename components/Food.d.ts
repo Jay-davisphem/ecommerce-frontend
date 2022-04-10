@@ -2,11 +2,12 @@ export type FoodItemProps = {
   id: number;
   name: string;
   image: string;
-  regular_price: number;
+  regular_price?: number;
   discount_price: number;
 };
 export type FoodDetailProps = FoodItemProps & {
   description: string;
+  category: number;
 };
 
 export type FoodItemsDetailsProps = {

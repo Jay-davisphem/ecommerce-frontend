@@ -3,8 +3,9 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import FoodItemDetail from "../../components/FoodItemDetail";
 import { ContextType } from "react";
+import { FoodItemsDetailsProps } from "../../components/Food";
 
-export default function Home({ item }) {
+export default function Home({ itemsDetail }: FoodItemsDetailsProps) {
   const router = useRouter();
   const { id } = router.query;
   return (
@@ -14,11 +15,12 @@ export default function Home({ item }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <FoodItemDetail
-        image={item.image}
-        description={item.description}
-        category={item.category}
-        price={item.regular_price}
-        title={item.name}
+        id={itemsDetail.id}
+        image={itemsDetail.image}
+        description={itemsDetail.description}
+        category={itemsDetail.category}
+        discount_price={itemsDetail.regular_price}
+        name={itemsDetail.name}
       />
     </>
   );

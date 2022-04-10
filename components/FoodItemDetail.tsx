@@ -3,9 +3,15 @@ import { FcLikePlaceholder, FcLike } from "react-icons/fc";
 import { TiShoppingCart } from "react-icons/ti";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { CategoryResponse } from "./Food";
+import { CategoryResponse, FoodDetailProps } from "./Food";
 
-const FoodItemDetail = ({ title, price, category, description, image }) => {
+const FoodItemDetail = ({
+  name,
+  discount_price,
+  category,
+  description,
+  image,
+}: FoodDetailProps) => {
   const [incart, setIncart] = useState(false);
   const [categoryName, setCategoryName] = useState("");
   const clickHandler = () => setIncart(!incart);
@@ -45,8 +51,8 @@ const FoodItemDetail = ({ title, price, category, description, image }) => {
           alt="image"
         />
         <div className="py-none text-[10px] md:text-sm text-left">
-          <a className="text-blue inline-block cursor-pointer">{title}</a>
-          <a className="text-sec inline-block cursor-pointer">${price}</a>
+          <span className="text-blue inline-block">{name}</span>&nbsp;&nbsp;
+          <span className="text-sec inline-block">${discount_price}</span>
           <p className="text-grey block text-[10px]">{categoryName}</p>
           <p className="text-grey block text-[8px]">{description}</p>
         </div>
