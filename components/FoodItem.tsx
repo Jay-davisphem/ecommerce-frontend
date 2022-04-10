@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FcLikePlaceholder, FcLike } from "react-icons/fc";
 import { useState } from "react";
 
-const FoodItem = ({ title, price, image }) => {
+const FoodItem = ({ title, price, image, id }) => {
   const [incart, setIncart] = useState(false);
   const clickHandler = () => setIncart(!incart);
   return (
@@ -21,14 +22,16 @@ const FoodItem = ({ title, price, image }) => {
             />
           )}
         </div>
-        <Image
-          src={image}
-          width="300"
-          height="200"
-          // layout="fill"
-          objectFit="cover"
-          alt="image"
-        />
+        <Link href={`foods/${id}/`}>
+          <Image
+            src={image}
+            width="300"
+            height="200"
+            // layout="fill"
+            objectFit="cover"
+            alt="image"
+          />
+        </Link>
         <div className="py-none text-xs md:text-base text-left">
           <a className="text-blue block cursor-pointer">{title}</a>
           <a className="text-sec block cursor-pointer">${price}</a>

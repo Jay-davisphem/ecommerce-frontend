@@ -15,7 +15,13 @@ export default function Foods({ items }) {
       <h1 className="text-main lg:text-4xl md:text-3xl text-2xl">FOOD LISTS</h1>
       <div className="flex flex-row flex-wrap gap-4 md:gap-8 justify-center">
         {items.map(({ regular_price, description, id, name, image }) => (
-          <FoodItem price={regular_price} image={image} title={name} key={id} />
+          <FoodItem
+            price={regular_price}
+            image={image}
+            title={name}
+            key={id}
+            id={id}
+          />
         ))}
       </div>
     </>
