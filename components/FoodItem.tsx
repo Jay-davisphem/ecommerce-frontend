@@ -2,8 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { FcLikePlaceholder, FcLike } from "react-icons/fc";
 import { useState } from "react";
+import { FoodItemProps } from "./Food";
 
-const FoodItem = ({ title, regular_price, discount_price, image, id }) => {
+const FoodItem = ({
+  title,
+  regular_price,
+  discount_price,
+  image,
+  id,
+}: FoodItemProps) => {
   const [incart, setIncart] = useState(false);
   const clickHandler = () => setIncart(!incart);
   return (
@@ -33,9 +40,15 @@ const FoodItem = ({ title, regular_price, discount_price, image, id }) => {
             className="cursor-pointer"
           />
         </Link>
-        <div className="py-none text-xs md:text-base text-left">
+        <div className="py-none text-xs md:text-base text-left text">
           <span className="text-blue block">{title}</span>
-          <span className="text-sec block">${regular_price}</span>
+          <span className="text-[9px]">
+            <span className="text-sec inline line-through decoration-[red]">
+              ${regular_price}
+            </span>
+            &nbsp;&nbsp;&nbsp;
+            <span className="text-sec inline">${discount_price}</span>
+          </span>
         </div>
       </div>
     </>

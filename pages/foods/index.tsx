@@ -2,9 +2,10 @@ import axios from "axios";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import img from "../../assets/assets_images/chicken2.jpeg";
+import { FoodItemsProps } from "../../components/Food";
 import FoodItem from "../../components/FoodItem";
 
-export default function Foods({ items }) {
+export default function Foods({ items }: FoodItemsProps) {
   return (
     <>
       <Head>
@@ -13,18 +14,16 @@ export default function Foods({ items }) {
       </Head>
       <h1 className="text-main lg:text-4xl md:text-3xl text-2xl">FOOD LISTS</h1>
       <div className="flex flex-row flex-wrap gap-4 md:gap-8 justify-center">
-        {items.map(
-          ({ regular_price, description, id, name, image, discount_price }) => (
-            <FoodItem
-              regular_price={regular_price}
-              discount_price={discount_price}
-              image={image}
-              title={name}
-              key={id}
-              id={id}
-            />
-          )
-        )}
+        {items.map(({ regular_price, id, image, title, discount_price }) => (
+          <FoodItem
+            regular_price={regular_price}
+            discount_price={discount_price}
+            image={image}
+            title={title}
+            key={id}
+            id={id}
+          />
+        ))}
       </div>
     </>
   );
