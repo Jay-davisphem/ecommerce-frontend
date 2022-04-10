@@ -30,6 +30,7 @@ const FoodItem = ({ title, price, image, id }) => {
             // layout="fill"
             objectFit="cover"
             alt="image"
+            className="cursor-pointer"
           />
         </Link>
         <div className="py-none text-xs md:text-base text-left">
