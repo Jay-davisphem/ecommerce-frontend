@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FcLikePlaceholder, FcLike } from "react-icons/fc";
 import { useState } from "react";
 
-const FoodItem = ({ title, price, image, id }) => {
+const FoodItem = ({ title, regular_price, discount_price, image, id }) => {
   const [incart, setIncart] = useState(false);
   const clickHandler = () => setIncart(!incart);
   return (
@@ -34,8 +34,8 @@ const FoodItem = ({ title, price, image, id }) => {
           />
         </Link>
         <div className="py-none text-xs md:text-base text-left">
-          <a className="text-blue block cursor-pointer">{title}</a>
-          <a className="text-sec block cursor-pointer">${price}</a>
+          <span className="text-blue block">{title}</span>
+          <span className="text-sec block">${regular_price}</span>
         </div>
       </div>
     </>
