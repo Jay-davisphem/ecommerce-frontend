@@ -15,7 +15,7 @@ export default function Home({ itemsDetail }: FoodItemsDetailsProps) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <FoodItemDetail
-        id={id}
+        id={itemsDetail.id}
         image={itemsDetail.image}
         description={itemsDetail.description}
         category={itemsDetail.category}
@@ -47,7 +47,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      item,
+      itemsDetail: item,
     },
   };
 }
