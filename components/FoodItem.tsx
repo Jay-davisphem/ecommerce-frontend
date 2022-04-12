@@ -12,7 +12,9 @@ const FoodItem = ({
   id,
 }: FoodItemProps) => {
   const [incart, setIncart] = useState(false);
-  const clickHandler = () => setIncart(!incart);
+  const clickHandler = () => {
+    setIncart(!incart);
+  };
   return (
     <>
       <div className="md:w-64 md:max-h-64 w-2/5 rounded overflow-hidden shadow-lg relative">

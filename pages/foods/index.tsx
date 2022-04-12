@@ -33,15 +33,15 @@ export async function getServerSideProps() {
   const initialData = [
     {
       id: 1,
-      name: "Fufu and Ewedu",
+      name: "No Food",
       description: "Foods",
-      regular_price: "1400.00",
+      regular_price: "",
       updated_at: "2022-03-27T14:43:40.145423+01:00",
       created_at: "2022-03-25T14:44:22.911309+01:00",
-      discount_price: "1200.00",
-      vendor: 3,
-      category: [1],
-      meats: [1],
+      discount_price: "",
+      vendor: 0,
+      category: [],
+      meats: [],
       image: img,
     },
   ];
@@ -60,7 +60,7 @@ export async function getServerSideProps() {
     }
     console.log(items);
   } catch {
-    throw new Error("FoodError");
+    // throw Error("FoodError");
   }
   return {
     props: {

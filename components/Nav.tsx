@@ -1,3 +1,4 @@
+import { BsFillCartPlusFill } from "react-icons/bs";
 const Nav = () => {
   return (
     <ul className="flex flex-col lg:flex-row md:flex-row list-none lg:ml-auto">
@@ -47,6 +48,17 @@ const Nav = () => {
           href="/user"
         >
           <span className="ml-2">User</span>
+        </a>
+      </li>
+      <li className="nav-item">
+        <span className="absolute text-white ml-4 -mt-3 z-10 text-xs">1</span>
+        <a
+          className="ml-0 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+          href="/cart"
+        >
+          <span className="ml-2 absolute">
+            <BsFillCartPlusFill className="text-2xl text-grey hover:text-white" />
+          </span>
         </a>
       </li>
     </ul>
