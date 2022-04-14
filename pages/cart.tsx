@@ -41,10 +41,10 @@ export default function Cart() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      <button onClick={() => changeCount("yus", "gbegiri")}>setCount</button>
+      {/* <button onClick={() => changeCount("yus", "gbegiri")}>setCount</button>
       <br />
       <button onClick={clearMemory}>Clear Mem</button>
-      {console.log(loc, "uhuhgfg")}
+      {console.log(loc, "uhuhgfg")} */}
       {myCart !== null ? <FilledCart val={myCart} /> : <EmptyCart />}
     </>
   );
