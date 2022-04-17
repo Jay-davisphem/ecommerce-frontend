@@ -3,7 +3,7 @@ import { SiGmail } from "react-icons/si";
 import { FiPhoneCall } from "react-icons/fi";
 const Footer = () => {
   return (
-    <footer className="text-center text-white">
+    <footer className="bottom-0 text-center text-white">
       <div className="container pt-4">
         <div className="flex textcenter justify-center ml-12">
           <a

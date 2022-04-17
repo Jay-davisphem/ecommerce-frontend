@@ -29,7 +29,7 @@ const FoodItemDetail = ({
   }, [categoryName]);
   return (
     <>
-      <div className="md:w-64 md:max-h-64 w-2/5 rounded overflow-hidden shadow-lg relative ml-2">
+      <div className="md:w-64 md:max-h-64 w-2/5 rounded overflow-hidden shadow-lg relative m-auto">
         <div className="w-4 h-4 md:h-7 md:w-7 rounded-full bg-white top-1 right-1 md:top-2 md:right-2 z-10 absolute">
           {incart ? (
             <FcLike
@@ -54,12 +54,12 @@ const FoodItemDetail = ({
           <span className="text-blue inline-block">{name}</span>&nbsp;&nbsp;
           <span className="text-sec inline-block">${discount_price}</span>
           <p className="text-grey block text-[10px]">{categoryName}</p>
-          <p className="text-grey block text-[8px]">{description}</p>
+          <p className="text-grey block text-[8px] lg:text-[10px]">{description}</p>
         </div>
         <div>
           <TiShoppingCart />
         </div>
-        <button className="text-white bg-main rounded-3xl text-sm py-0 px-2">
+        <button className="text-white bg-main rounded-3xl text-xs lg:text-sm py-0 px-2 hover:bg-blue hover:">
           Order Now
         </button>
       </div>

@@ -8,7 +8,7 @@ export default function Layout({children}) {
   return (
     <>
       <Header />
-      <main className="min-h-screen text-center">
+      <main className="flex-col text-center mt-4 mb-20">
       {children}
       </main>
       <Footer />

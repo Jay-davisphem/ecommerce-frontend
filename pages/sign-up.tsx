@@ -1,53 +1,21 @@
 import React, { useState, useEffect } from "react";
+import Input from '../components/Input'; 
+import Title from '../components/Title' 
 
 function SignUp() {
   return (
     <div className="container mx-auto align-middle max-w-xs">
+      <Title title='Create An Accout' />
       <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <input
-          className="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="first_name"
-          type="text"
-          placeholder="First Name"
-        />
-
-        <input
-          className="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="last_name"
-          type="text"
-          placeholder="Last Name"
-        />
-
-        <input
-          className="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="username"
-          type="text"
-          placeholder="Username"
-        />
-
-        <input
-          className="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="email"
-          type="email"
-          placeholder="Email"
-        />
-
-        <input
-          className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          id="password"
-          type="password"
-          placeholder="Password"
-        />
-        <input
-          className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          id="password"
-          type="password"
-          placeholder="Confirm Password"
-        />
-
+        <Input id='first_name' placeholder='First Name' />
+        <Input id='last_name' placeholder='Last Name' />
+        <Input id='username' placeholder='Username' />   
+        <Input id='email' type='email' placeholder='Email' />   
+        <Input id='password' type='password' placeholder='Password' />
+        <Input id='confirm_password' type='password' placeholder='Confirm Password' />  
         <div className="text-left">
           <input
-            className="mr-2 leading-tight"
+            className="mr-2 accent-blue"
             id="is_vendor"
             type="checkbox"
           />
