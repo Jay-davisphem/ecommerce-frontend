@@ -5,9 +5,10 @@ import Layout from "../components/Layout";
 import axios from "axios";
 
 export default function App({ Component, pageProps }): ReactElement {
-  const [cred, setCred] = useState(returnCred("myAccountCredentials"));
+  /*const [cred, setCred] = useState(returnCred("myAccountCredentials"));
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const [error, setError] = useState("");
+  const [isError, setIsError] = useState(false);
   const logIn = (cred) => {
     if (
       cred.username !== "" &&
@@ -26,13 +27,14 @@ export default function App({ Component, pageProps }): ReactElement {
           console.log(res.data);
         })
         .catch((err) => {
+          setIsError(true);
+          setError(err.message);
           console.log(err.message, "at submission");
         });
     else if (cred.token !== undefined) {
       setCred(cred);
       if (typeof window !== "undefined") {
-        localStorage.setItem(JSON.stringify(cred));
-        setCred(cred);
+        localStorage.setItem("myAccountCredentials", JSON.stringify(cred));
         setIsLoggedIn(true);
       }
     }
@@ -43,7 +45,7 @@ export default function App({ Component, pageProps }): ReactElement {
       if (val === null) return { username: "", password: "", token: "" };
       else {
         if (!isLoggedIn) {
-          setIsLoggedIn(true);
+          //setIsLoggedIn(true);
           location.href = "/foods/";
         }
         return JSON.parse(val);
@@ -56,10 +58,19 @@ export default function App({ Component, pageProps }): ReactElement {
       <Component
         {...pageProps}
         cred={cred}
+        setCred={setCred}
         isLoggedIn={isLoggedIn}
         setIsLoggedIn={setIsLoggedIn}
         logIn={logIn}
+        error={error}
+        isError={isError}
+        setError={setError}
+        setIsError={setIsError}
       />
+      </Layout> */
+  return (
+    <Layout>
+      <Component {...pageProps} />
     </Layout>
   );
 }
