@@ -26,10 +26,7 @@ function Login() {
       const val = localStorage.getItem(key);
       if (val === null) return { username: "", password: "", token: "" };
       else {
-        if (!isLoggedIn) {
-          //setIsLoggedIn(true);
-          location.href = "/foods/";
-        }
+        const [IsLoggedIn, setIsLoggedIn] = useState(true);
         return JSON.parse(val);
       }
     }
