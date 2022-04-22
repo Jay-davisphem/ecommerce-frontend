@@ -25,7 +25,7 @@ function Input(props) {
   return (
     <>
       {props.label ? (
-        <label for={props.id} className="text-grey italic lowercase">
+        <label htmlFor={props.id} className="text-grey italic lowercase">
           {props.placeholder} {props.large ? textarea : input}
         </label>
       ) : props.large ? (
