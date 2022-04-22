@@ -18,6 +18,7 @@ function Input(props) {
       type={props.type ? props.type : "text"}
       placeholder={props.placeholder}
       label={props.label}
+      required
       {...props}
     />
   );

@@ -7,6 +7,6 @@ module.exports = {
     return config;
   },*/
   images: {
-    domains: ["localhost"],
+    domains: ["localhost", 'femi-food.herokuapp.com'],
   },
 };
