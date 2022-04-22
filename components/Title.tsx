@@ -10,7 +10,7 @@ function Title({ title, include = false }) {
       <h2
         className={
           include
-            ? "text-main lg:text-4xl md:text-3xl text-2xl mt-4 mb-12"
+            ? "text-main lg:text-4xl md:text-3xl text-2xl mt-4 mb-8"
             : "text-blue text-xl"
         }
       >
