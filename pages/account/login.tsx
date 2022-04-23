@@ -1,6 +1,6 @@
 import Login from "../../components/Login";
-function Login() {
+function Log() {
   return <Login />;
 }
 
-export default Login;
+export default Log;

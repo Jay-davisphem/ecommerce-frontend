@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Input from "./Input";
 import Title from "./Title";
-function Login() {
+export default function Login() {
   const [cred, setCred] = useState({ username: "", password: "" });
   const handleInputChange = (e) => {
     const val = e.target.value;
@@ -54,4 +54,3 @@ function Login() {
   );
 }
 
-export default Login;
