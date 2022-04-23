@@ -51,8 +51,8 @@ export async function getServerSideProps() {
       `${process.env.API_URL}apis/food-images/`
     );
     const images = images_res.data;
-    for (let image of images) {
-      for (let food of items) {
+    for (const image of images) {
+      for (const food of items) {
         if (image.food === food.id) food["image"] = image.food_images;
       }
     }

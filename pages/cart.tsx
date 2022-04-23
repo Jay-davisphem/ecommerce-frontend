@@ -5,7 +5,6 @@ import FilledCart from "../components/FilledCart";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export default function Cart() {
-  var loc;
   const [myCart, setMyCart] = useState("");
   const [cartCount, setCartCount] = useState<number>();
   useEffect(() => {

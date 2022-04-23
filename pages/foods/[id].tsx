@@ -36,7 +36,7 @@ export async function getServerSideProps(context) {
   const images_res = await axios.get(`${process.env.API_URL}apis/food-images/`);
   const images = images_res.data;
 
-  for (let image of images) {
+  for (const image of images) {
     if (image.food === item.id) {
       item["image"] = image.food_images;
       break;
