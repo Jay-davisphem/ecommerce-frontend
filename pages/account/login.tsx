@@ -1,15 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Input from "../../components/Input";
 import Title from "../../components/Title";
+import AuthContext from "../../context/AuthContext";
+import axios from "axios";
+import { ImSpinner } from "react-icons/im";
+
+const rootUrl = "http://localhost:8000";
+
 export default function Login() {
-  const [cred, setCred] = useState({ username: "", password: "" });
+  const { dispatch } = useContext(AuthContext);
+
+  const [cred, setCred] = useState({
+    username: "",
+    password: "",
+    isSubmitting: false,
+    errorMessage: null,
+  });
+
   const handleInputChange = (e) => {
     setCred({ ...cred, [e.target.id]: e.target.value });
   };
 
   const handleSignIn = (e) => {
     e.preventDefault();
-    return;
+    setCred({ ...cred, isSubmitting: true });
+    axios
+      .post(`${rootUrl}/login/`, {
+        username: cred.username,
+        password: cred.password,
+      })
+      .then((res) => {
+        setCred({ ...cred, isSubmitting: false });
+        dispatch({
+          type: "LOGIN",
+          payload: {
+            cred: { username: cred.username, password: cred.password },
+            token: res.data.token,
+          },
+        });
+      })
+      .catch((err) => {
+        setCred({
+          ...cred,
+          isSubmitting: false,
+          errorMessage: err.message || err.response.data.statusText,
+        });
+      });
   };
 
   return (
@@ -23,20 +59,31 @@ export default function Login() {
         <Input
           id="username"
           placeholder="Username"
+          value={cred.username}
           onChange={handleInputChange}
         />
         <Input
           id="password"
           type="password"
           placeholder="Password"
+          value={cred.password}
           onChange={handleInputChange}
         />
         <div className="flex items-center justify-between">
           <button
-            className="bg-sec hover:bg-blue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className={`text-white font-bold py-2 rounded focus:outline-none focus:shadow-outline 
+              ${
+                cred.isSubmitting
+                  ? "bg-blue text-2xl px-8 disabled"
+                  : "bg-sec hover:bg-blue px-4"
+              }`}
             type="submit"
           >
-            Sign In
+            {cred.isSubmitting ? (
+              <ImSpinner className="text-main animate-spin" />
+            ) : (
+              "Sign In"
+            )}
           </button>
           <a
             className="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-800"

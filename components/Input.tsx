@@ -7,6 +7,7 @@ function Input(props) {
       id={props.id}
       rows={3}
       placeholder={props.placeholder}
+      name={props.id}
       {...props}
     ></textarea>
   );
@@ -17,6 +18,7 @@ function Input(props) {
       id={props.id}
       type={props.type ? props.type : "text"}
       placeholder={props.placeholder}
+      name={props.id}
       label={props.label}
       required
       {...props}

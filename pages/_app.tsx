@@ -10,11 +10,20 @@ import SignUp from "./account/sign-up";
 import Contact from "./contact-us";
 import Foods from "./foods/index";
 import About from "./about";
-const initialState = {
+
+let initialState = {
   isLoggedIn: false,
   cred: null,
   token: null,
 };
+
+if (typeof window !== "undefined") {
+  initialState = {
+    isLoggedIn: localStorage.getItem("token") || false,
+    cred: localStorage.getItem("cred"),
+    token: localStorage.getItem("token"),
+  };
+}
 export default function App({ Component, pageProps }): ReactElement {
   const [state, dispatch] = useReducer(reducer, initialState);
   let UsedComponent;
@@ -32,6 +41,8 @@ export default function App({ Component, pageProps }): ReactElement {
     }
   } else {
     if (Component === SignUp) {
+      UsedComponent = Foods;
+    } else if (Component === Login) {
       UsedComponent = Foods;
     } else {
       UsedComponent = Component;
